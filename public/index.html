@@ -2,35 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>stream</title>
-    <script src="/socket.io/socket.io.js"></script>
+    <title>Tessel Live Cam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
-    <canvas id="output" width="320" height="240" style="border:solid;"></canvas>
-    <script>
-      window.onload = function() {
-        var context = document.getElementById("output").getContext("2d");
-        var socket = io();
-        var frame = null;
-
-        socket.on("image", (encoded) => {
-          frame = "data:image/jpeg;base64," + encoded;
-        });
-
-        socket.emit("ready");
-
-        setInterval(() => {
-          if (frame) {
-            var image = new Image();
-            image.src = frame;
-            try {
-              context.drawImage(image, 0, 0);
-            } catch (e) {
-              // ... suppress InvalidStateError
-            }
-          }
-        }, 1000 / 24);
-      };
-    </script>    
+  <body style="font-family:Helvetica,sans-serif;text-align:center;">
+    <h1>My QueensJS Dashboard</h1>
+    <img src="/stream" alt="Tessel live stream" style="height:auto;width:80%;">
+    <footer style="padding:0 2rem;text-align:right;">
+      <p style="color:red;">Powered by Tessel 2!</p>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,22 @@
+{
+  "name": "tessel-live-streamer",
+  "version": "0.1.0",
+  "description": "Tessel project",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "johnny-five": "^0.9.62",
+    "socket.io": "^1.4.8",
+    "tessel-av": "^0.8.0",
+    "tessel-io": "^0.6.4"
+  },
+  "scripts": {
+    "start": "t2 run index.js"
+  },
+  "repository": "www.github.com/tessel/t2-cli",
+  "keywords": [
+    "Tessel"
+  ],
+  "license": "MIT",
+  "readme": "Live stream from USB camera to a webpage"
+}
